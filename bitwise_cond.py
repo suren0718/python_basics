@@ -23,3 +23,15 @@ if((n & (n-1))==0):
   print("yes")
 else:
   print("no")
+
+
+# left shift multiply by 2
+# right shift dividing by 2
+
+n=int(input())
+
+if(((n>>1)<<1) == n):
+  print("even")
+
+else:
+  print("odd")
