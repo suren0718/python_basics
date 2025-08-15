@@ -11,3 +11,14 @@ class Solution:
                     return False
                 stack.pop()
         return not stack
+
+# length of last words
+
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        s=s.rstrip()
+
+        words= s.split()
+        n=len(s)
+
+        return len(words[-1])
