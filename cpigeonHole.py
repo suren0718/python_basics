@@ -22,7 +22,7 @@ for _ in range(q):
     if nest_count[h] == 2:               #and also multiple_count +1
       overlap_count +=1
     
-    pig_pos[p] = h
+    pig_pos[p] = h                       #update the pigeon pos
   else:
     print(overlap_count)
 
