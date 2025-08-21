@@ -1,28 +1,21 @@
-def diagonal_triangle(n):
-    # Step 1: Fill diagonals of an n x n square
-    mat = [[0]*n for _ in range(n)]
+def zigzag_triangle(n):
+    arr = [[0]*n for _ in range(n)]
     num = 1
-    for d in range(2*n-1):
-        if d % 2 == 0:  # even diagonal → DOWN
-            c = min(d, n-1)
-            r = d - c
-            while c >= 0 and r < n:
-                mat[r][c] = num
-                num += 1
-                r += 1
-                c -= 1
-        else:  # odd diagonal → UP
-            r = min(d, n-1)
-            c = d - r
-            while r >= 0 and c < n:
-                mat[r][c] = num
-                num += 1
-                r -= 1
-                c += 1
 
-    # Step 2: Print only lower triangle
+    for j in range(n):
+        if j % 2 == 0:
+
+            for i in range(j, n):
+                arr[i][j] = num
+                num += 1
+        else:
+            for i in range(n-1, j-1, -1):
+                arr[i][j] = num
+                num += 1
+
     for i in range(n):
-        print(" ".join(str(mat[i][j]) for j in range(i+1)))
+        for j in range(i+1):
+            print(arr[i][j], end=" ")
+        print()
 
-
-diagonal_triangle(5)
+zigzag_triangle(5)
